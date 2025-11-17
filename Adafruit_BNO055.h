@@ -314,7 +314,7 @@ public:
   void enterSuspendMode();
   void enterNormalMode();
 
-private:
+protected:
   byte read8(adafruit_bno055_reg_t);
   bool readLen(adafruit_bno055_reg_t, byte *buffer, uint8_t len);
   bool write8(adafruit_bno055_reg_t, byte value);
