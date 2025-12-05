@@ -169,9 +169,10 @@ bool Adafruit_BNO055::begin(adafruit_bno055_opmode_t mode) {
  *            OPERATION_MODE_NDOF]
  */
 void Adafruit_BNO055::setMode(adafruit_bno055_opmode_t mode) {
+  const uint8_t d = (mode == OPERATION_MODE_CONFIG) ? 20 : 8;
+  write8(BNO055_OPR_MODE_ADDR, mode);
+  delay(d);
   _mode = mode;
-  write8(BNO055_OPR_MODE_ADDR, _mode);
-  delay(30);
 }
 
 /*!
